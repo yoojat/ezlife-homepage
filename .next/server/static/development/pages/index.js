@@ -1211,7 +1211,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/yoojat/dev/project/nextjs-boilerplate/pages/index/index.js */"./pages/index/index.js");
+module.exports = __webpack_require__(/*! /Users/yoojat/dev/project/ezlife-homepage/ezlife-homepage/pages/index/index.js */"./pages/index/index.js");
 
 
 /***/ }),

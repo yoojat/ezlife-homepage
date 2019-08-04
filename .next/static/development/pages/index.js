@@ -7483,10 +7483,10 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fyoojat%2Fdev%2Fproject%2Fnextjs-boilerplate%2Fpages%2Findex%2Findex.js!./":
-/*!**********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fyoojat%2Fdev%2Fproject%2Fnextjs-boilerplate%2Fpages%2Findex%2Findex.js ***!
-  \**********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fyoojat%2Fdev%2Fproject%2Fezlife-homepage%2Fezlife-homepage%2Fpages%2Findex%2Findex.js!./":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fyoojat%2Fdev%2Fproject%2Fezlife-homepage%2Fezlife-homepage%2Fpages%2Findex%2Findex.js ***!
+  \*************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14668,13 +14668,13 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fyoojat%2Fdev%2Fproject%2Fnextjs-boilerplate%2Fpages%2Findex%2Findex.js ***!
-  \**************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fyoojat%2Fdev%2Fproject%2Fezlife-homepage%2Fezlife-homepage%2Fpages%2Findex%2Findex.js ***!
+  \*****************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fyoojat%2Fdev%2Fproject%2Fnextjs-boilerplate%2Fpages%2Findex%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fyoojat%2Fdev%2Fproject%2Fnextjs-boilerplate%2Fpages%2Findex%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fyoojat%2Fdev%2Fproject%2Fezlife-homepage%2Fezlife-homepage%2Fpages%2Findex%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fyoojat%2Fdev%2Fproject%2Fezlife-homepage%2Fezlife-homepage%2Fpages%2Findex%2Findex.js!./");
 
 
 /***/ }),
