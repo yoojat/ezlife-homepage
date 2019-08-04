@@ -13,7 +13,7 @@ const FooterLogo = styled.p`
   width: 125px;
   height: 24px;
   text-indent: -9999px;
-  background-image: url("/static/img/main/LogoWhite.png");
+  background-image: url("/static/img/brand/logo-icon.png");
   background-repeat: no-repeat;
   background-size: 125px auto;
   margin-bottom: 22px;

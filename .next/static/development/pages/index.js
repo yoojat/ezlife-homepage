@@ -57,7 +57,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin-left: auto;\n  margin-right: auto;\n  display: block;\n  width: 125px;\n  height: 24px;\n  text-indent: -9999px;\n  background-image: url(\"/static/img/main/LogoWhite.png\");\n  background-repeat: no-repeat;\n  background-size: 125px auto;\n  margin-bottom: 22px;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  margin-left: auto;\n  margin-right: auto;\n  display: block;\n  width: 125px;\n  height: 24px;\n  text-indent: -9999px;\n  background-image: url(\"/static/img/brand/logo-icon.png\");\n  background-repeat: no-repeat;\n  background-size: 125px auto;\n  margin-bottom: 22px;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
