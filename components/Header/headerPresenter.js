@@ -1,9 +1,15 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-const Header = styled.header``;
+const Header = styled.header`
+  width: 100%;
+  max-width: 680px;
+  margin: auto;
+`;
 
-const HeaderIn = styled.div``;
+const HeaderIn = styled.div`
+  width: 100%;
+`;
 const LogoItem = styled.div`
   float: left;
 `;
