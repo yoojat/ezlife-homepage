@@ -17,25 +17,6 @@ app
   .then(() => {
     const server = express();
 
-    server.get("/LogoBlue.png", (req, res) =>
-      res.status(200).sendFile("/img/main/LogoBlue.png", options)
-    );
-    // server.get("/robots.txt", (req, res) => {
-    //   res.type("text/plain");
-    //   res.send("User-agent: *\nAllow: /");
-
-    //   // return res.status(200).sendFile("/img/main/WorkerImg1.jpg", options);
-    //   // return res.status(200).sendFile("/img/main/LogoBlue.png", options);
-
-    //   // return res.status(200).sendFile("/static/robots.txt", options);
-    // });
-
-    server.get("/branch/:id", (req, res) => {
-      const actualPage = "/branch";
-      const queryParams = { id: req.params.id };
-      app.render(req, res, actualPage, queryParams);
-    });
-
     server.get("*", (req, res) => {
       return handle(req, res);
     });

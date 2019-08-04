@@ -35,7 +35,6 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps, apollo } = this.props;
-    const { nowScrollPosition } = this.state;
     return (
       <ThemeProvider theme={theme}>
         <ApolloProvider client={apollo}>
