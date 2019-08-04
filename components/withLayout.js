@@ -1,5 +1,5 @@
 import React from "react";
-// import Header from "./Header";
+import Header from "./Header";
 import Footer from "./Footer";
 
 const withLayout = Component => {
@@ -7,7 +7,7 @@ const withLayout = Component => {
     render() {
       return (
         <div>
-          {/* <Header /> */}
+          <Header />
           <Component />
           <Footer />
         </div>

@@ -1,29 +1,9 @@
 import styled from "styled-components";
 const Footer = styled.footer`
-  background-color: #1b1c20;
+  clear: both;
   padding: 30px 0;
-  color: #b0b0b0;
   text-align: center;
   font-size: 13px;
-`;
-const FooterLogo = styled.p`
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 125px;
-  height: 24px;
-  text-indent: -9999px;
-  background-image: url("/static/img/brand/logo-icon.png");
-  background-repeat: no-repeat;
-  background-size: 125px auto;
-  margin-bottom: 22px;
-`;
-const FooterInfo = styled.p`
-  margin-bottom: 4px;
-`;
-const FooterSpan = styled.span`
-  margin-left: 5px;
-  margin-right: 5px;
 `;
 
 const BranchInfoContainer = styled.div``;
@@ -32,37 +12,21 @@ const BranchInfoItem = styled.div``;
 
 export default () => (
   <Footer>
-    <FooterLogo>블루닷라운지</FooterLogo>
     <BranchInfoContainer>
       <BranchInfoItem>
-        화명본점 : 부산광역시 북구 양달로4번길 11 세흥빌딩 4층
+        사업자등록번호 607-20-38358 | 의료기기판매업(임대)신고증 : 15-3
       </BranchInfoItem>
       <BranchInfoItem>
-        화명역점 : 부산광역시 북구 화명대로 15 하이페리온타워 501호
+        시력서비스 제공자 등록증 : 2467000000159 | 장애인보장구 업소 등록증:
+        D2600034600000
       </BranchInfoItem>
       <BranchInfoItem>
-        동래안락점 : 부산광역시 동래구 연안로 41 6층 블루닷라운지
+        주소 : 부산광역시 연제구 연수로 148번길 45(연산동 2층)
       </BranchInfoItem>
       <BranchInfoItem>
-        반여점 : 부산광역시 해운대구 선수촌로 65-25
+        TEL : 051-867-4987 | FAX : 051-867-4988 | E-mail : juoh3325@hanmail.net
       </BranchInfoItem>
-      <BranchInfoItem>
-        명륜역점 : 부산 동래구 동래로 27-15 2층, 3층
-      </BranchInfoItem>
-      <BranchInfoItem>
-        양산중부점 : 경상남도 양산시 양산역5길 10-1 2층 202호
-      </BranchInfoItem>
-      <BranchInfoItem>
-        구서점 : 부산광역시 금정구 금샘로 369 3층 블루닷라운지 구서점
-      </BranchInfoItem>
-      <BranchInfoItem>
-        울산수암점 : 울산광역시 남구 중앙로44번길 1-4 2층 블루닷라운지
-      </BranchInfoItem>
+      <BranchInfoItem>Copyright EZ life</BranchInfoItem>
     </BranchInfoContainer>
-    <FooterInfo>
-      상호명 : (주) 크리플레이 617-86-24973<FooterSpan>|</FooterSpan> 대표 :
-      송병근
-    </FooterInfo>
-    <p>©2019 CRE-PLAY All rights reserved.</p>
   </Footer>
 );
