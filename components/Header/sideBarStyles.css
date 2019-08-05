@@ -1,0 +1,9 @@
+.bm-burger-button {
+  top: 2.5rem;
+  right: 2rem;
+}
+@media (min-width: 600px) {
+  .bm-burger-button {
+    display: none;
+  }
+}

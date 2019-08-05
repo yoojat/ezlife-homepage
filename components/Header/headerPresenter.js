@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Header = styled.header`
   width: 100%;
-  max-width: 680px;
+  max-width: 1280px;
   margin: auto;
 `;
 
@@ -21,6 +21,10 @@ const Nav = styled.nav`
   float: right;
   display: table;
   height: 100px;
+  margin-right: 1rem;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const Gnb = styled.ul`
