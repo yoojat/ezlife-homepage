@@ -15,7 +15,11 @@ const LogoItem = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 100px;
+  width: 15vw;
+  max-width: 10rem;
+  min-width: 7rem;
+  margin-left: 1.3rem;
+  margin-top: 1.3rem;
 `;
 const Nav = styled.nav`
   float: right;
