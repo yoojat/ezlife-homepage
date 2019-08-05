@@ -57,7 +57,7 @@ export default () => (
       <Nav>
         <Gnb>
           <MenuItem>
-            <Link href={"/"}>
+            <Link href={"/companyInfo"}>
               <a>
                 <GnbD1>회사소개</GnbD1>
               </a>

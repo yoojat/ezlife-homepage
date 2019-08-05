@@ -10,7 +10,7 @@ class HeaderContainer extends React.Component {
     return (
       <>
         <ExtendedMenu right>
-          <a id="home" className="menu-item" href="/">
+          <a id="home" className="menu-item" href="/companyInfo">
             회사소개
           </a>
           <a id="about" className="menu-item" href="/about">
