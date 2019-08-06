@@ -160,6 +160,24 @@ const AboutCompany = styled.div`
   }
 `;
 
+const MainBzCol = styled.div`
+  margin-top: 3rem;
+`;
+const MainBzTitle = styled.div`
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1.3rem;
+`;
+const MainBzImgContainer = styled.div`
+  text-align: center;
+  margin-bottom: 1.3rem;
+`;
+const MainBzImg = styled.img`
+  width: 100%;
+  max-width: 300px;
+`;
+const MainBzContent = styled.div``;
+
 const GREETING = "GREETING";
 const MAIN_BUSINESS = "MAIN_BUSINESS";
 const COME_METHOD = "COME_METHOD";
@@ -255,7 +273,34 @@ export default ({ nowPage, onPageClick }) => (
           </>
         )}
         {nowPage === MAIN_BUSINESS && (
-          <img src={"/static/img/brand/logo-icon.png"} />
+          <>
+            <GreetingTitle>주요사업</GreetingTitle>
+
+            <MainBzCol>
+              <MainBzTitle>- 바우처 렌탈 사업</MainBzTitle>
+              <MainBzImgContainer>
+                <MainBzImg src={"/static/img/bzInfo/happyCard.JPG"} />
+              </MainBzImgContainer>
+              <MainBzContent>
+                보건복지부 주관 지역사회 서비스 투자 사업인 보조기구 렌탈 사업을
+                통해 중증의 장애아동 및 청소년(만 24세)에게 보조기구를 렌탈,
+                관리하는 통합서비스를 정부지원을 통해 지원하고 있습니다.
+              </MainBzContent>
+            </MainBzCol>
+            <MainBzCol>
+              <MainBzTitle>- 장애인 보장구 사업</MainBzTitle>
+              <MainBzImgContainer>
+                <MainBzImg src={"/static/img/bzInfo/hwell.JPG"} />
+              </MainBzImgContainer>
+              <MainBzContent>
+                장애인 보장구는 장애인복지법에 의하여 등록된 장애인인 가입자 및
+                피부양자가 보장구를 구입할 경우, 구입금액의 일부를
+                국민건강보험공간에서 보험급여지로 지급하는 제도이며, 당사는
+                장애인 보장구 제공기관 등록업소로서 해당 사업을 통해 장애인의
+                재활을 위해 노력하고 있습니다.
+              </MainBzContent>
+            </MainBzCol>
+          </>
         )}
       </RightContentContainer>
     </ContentSection>
