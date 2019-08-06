@@ -13,6 +13,7 @@
     "react-apollo": "^2.5.8",
     "react-burger-menu": "^2.6.11",
     "react-dom": "^16.8.6",
+    "react-google-maps": "^9.4.5",
     "react-icons": "^3.7.0",
     "react-slick": "^0.24.0",
     "slick-carousel": "^1.8.1",

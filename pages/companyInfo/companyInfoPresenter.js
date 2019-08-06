@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
+import Map from "../../components/Map";
 
 const TopBannerContainer = styled.div`
   padding-top: 100px;
@@ -129,7 +130,7 @@ const MenuItem = styled.div`
   }
 `;
 
-const GreetingTitle = styled.div`
+const BzIntroTitile = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -177,6 +178,20 @@ const MainBzImg = styled.img`
   max-width: 300px;
 `;
 const MainBzContent = styled.div``;
+
+const MapContainer = styled.div`
+  margin-bottom: 3rem;
+`;
+const ComeMethodCol = styled.div``;
+const ComeMethodTitle = styled.div`
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+`;
+const ComeMethodContent = styled.div`
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+`;
 
 const GREETING = "GREETING";
 const MAIN_BUSINESS = "MAIN_BUSINESS";
@@ -229,7 +244,7 @@ export default ({ nowPage, onPageClick }) => (
       <RightContentContainer>
         {nowPage === GREETING && (
           <>
-            <GreetingTitle>인사말</GreetingTitle>
+            <BzIntroTitile>인사말</BzIntroTitile>
             <GreetingText>
               이지라이프 홈페이지를 방문해주셔서 진심으로 감사드립니다
             </GreetingText>
@@ -274,7 +289,7 @@ export default ({ nowPage, onPageClick }) => (
         )}
         {nowPage === MAIN_BUSINESS && (
           <>
-            <GreetingTitle>주요사업</GreetingTitle>
+            <BzIntroTitile>주요사업</BzIntroTitile>
 
             <MainBzCol>
               <MainBzTitle>- 바우처 렌탈 사업</MainBzTitle>
@@ -300,6 +315,39 @@ export default ({ nowPage, onPageClick }) => (
                 재활을 위해 노력하고 있습니다.
               </MainBzContent>
             </MainBzCol>
+          </>
+        )}
+        {nowPage === COME_METHOD && (
+          <>
+            <BzIntroTitile>오시는 길</BzIntroTitile>
+            <MapContainer>
+              <Map
+                isMarkerShown
+                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZWDZtnTPgzPRY8DqpYqVYJ2pGQMec7gM&v=3.exp&libraries=geometry,drawing,places"
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={<div style={{ height: `400px` }} />}
+                mapElement={<div style={{ height: `100%` }} />}
+                lat={35.174423}
+                lng={129.086854}
+              />
+            </MapContainer>
+            <ComeMethodCol>
+              <ComeMethodTitle>- 주소 및 연락처</ComeMethodTitle>
+              <ComeMethodContent>
+                부산광역시 연제구 연수로 148번지 45 (연산동 2층)
+                <br /> TEL. 051-867-4987
+                <br /> FAX. 051-867-4988
+              </ComeMethodContent>
+            </ComeMethodCol>
+            <ComeMethodCol>
+              <ComeMethodTitle>- 오시는 방법</ComeMethodTitle>
+              <ComeMethodContent>
+                자동차 : 신리삼거리에서 배산역 가능 방향으로 약 100m 지점에서
+                우회전, 약 200m 직진
+                <br />
+                버스 : 신리삼거리 정류장에서 미곡천로를 따라 약 200m 도보로 이동
+              </ComeMethodContent>
+            </ComeMethodCol>
           </>
         )}
       </RightContentContainer>
