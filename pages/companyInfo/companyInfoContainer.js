@@ -6,7 +6,7 @@ class CompanyInfoContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nowPage: "COME_METHOD"
+      nowPage: GREETING
     };
   }
 

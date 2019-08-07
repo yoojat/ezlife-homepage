@@ -75,7 +75,7 @@ export default () => (
             </Link>
           </MenuItem>
           <MenuItem>
-            <Link href={"/"}>
+            <Link href={"/goSupport"}>
               <a>
                 <GnbD1>정부지원제도</GnbD1>
               </a>
