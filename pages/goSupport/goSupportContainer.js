@@ -6,7 +6,7 @@ class GoSuportContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nowPage: "EXTENDED_PRODUCT"
+      nowPage: VOUCHER
     };
   }
 

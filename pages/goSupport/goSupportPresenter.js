@@ -241,6 +241,7 @@ const ServiceStepContainer = styled.div`
   overflow: scroll;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1000px;
   @media (max-width: 1280px) {
     width: 90vw;
   }
@@ -307,6 +308,7 @@ const UsageContentContainer = styled.div`
   display: inline-block;
   text-align: left;
   padding-left: 2rem;
+  width: 90%;
 `;
 
 const ExtPdTableText = styled.div`
@@ -326,6 +328,47 @@ const ExtPdTableContainer = styled.div`
 const ExtPdTd = styled.td`
   padding-top: 1rem;
   padding-bottom: 1rem;
+`;
+
+const InsuraceTypeTableContainer = styled.div`
+  overflow: scroll;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 1280px) {
+    width: 90vw;
+  }
+`;
+
+const InsuraceTypeTable = styled.table`
+  width: 100%;
+  min-width: 700px;
+  text-align: right;
+  thead {
+    background-color: ${props => props.theme.tableHeadBlue};
+    color: white;
+  }
+  tr,
+  th {
+    height: 2rem;
+    text-align: center;
+  }
+  tbody {
+    tr:nth-child(2n-1) {
+      background-color: ${props => props.theme.tableRowBlue1};
+    }
+    tr:nth-child(2n) {
+      background-color: ${props => props.theme.tableRowBlue2};
+    }
+  }
+`;
+
+const StandardContent = styled.div`
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: inline-block;
+  text-align: left;
+  padding-left: 2rem;
+  width: 90%;
 `;
 
 export default ({ nowPage, onPageClick }) => (
@@ -660,13 +703,13 @@ export default ({ nowPage, onPageClick }) => (
                 <ExtendedPdTable>
                   <thead>
                     <tr>
-                      <ExtPdTd width={100}>
+                      <ExtPdTd width={130}>
                         <ExtPdTableText>품목</ExtPdTableText>
                       </ExtPdTd>
                       <ExtPdTd width={100}>
                         <ExtPdTableText>장애유형</ExtPdTableText>
                       </ExtPdTd>
-                      <ExtPdTd width={400}>
+                      <ExtPdTd width={390}>
                         <ExtPdTableText>
                           용도 및 대상자 세부 안정 기준
                         </ExtPdTableText>
@@ -674,7 +717,7 @@ export default ({ nowPage, onPageClick }) => (
                       <ExtPdTd>
                         <ExtPdTableText>기준액(원)</ExtPdTableText>
                       </ExtPdTd>
-                      <ExtPdTd width={80}>
+                      <ExtPdTd width={100}>
                         <ExtPdTableText>내구현한</ExtPdTableText>
                       </ExtPdTd>
                       <ExtPdTd>
@@ -897,7 +940,9 @@ export default ({ nowPage, onPageClick }) => (
                         <ExtPdTableText>
                           수동휠체어
                           <br />
-                          (틸팅형/리클라이닝형)
+                          (틸팅형
+                          <br />
+                          /리클라이닝형)
                         </ExtPdTableText>
                       </ExtPdTd>
                       <ExtPdTd>
@@ -977,35 +1022,389 @@ export default ({ nowPage, onPageClick }) => (
         )}
         {nowPage === INSURANCE && (
           <>
-            <BzIntroTitile>오시는 길</BzIntroTitile>
-            <MapContainer>
-              <Map
-                isMarkerShown
-                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZWDZtnTPgzPRY8DqpYqVYJ2pGQMec7gM&v=3.exp&libraries=geometry,drawing,places"
-                loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={<div style={{ height: `400px` }} />}
-                mapElement={<div style={{ height: `100%` }} />}
-                lat={35.174423}
-                lng={129.086854}
-              />
-            </MapContainer>
-            <ComeMethodCol>
-              <ComeMethodTitle>- 주소 및 연락처</ComeMethodTitle>
-              <ComeMethodContent>
-                부산광역시 연제구 연수로 148번지 45 (연산동 2층)
-                <br /> TEL. 051-867-4987
-                <br /> FAX. 051-867-4988
-              </ComeMethodContent>
-            </ComeMethodCol>
-            <ComeMethodCol>
-              <ComeMethodTitle>- 오시는 방법</ComeMethodTitle>
-              <ComeMethodContent>
-                자동차 : 신리삼거리에서 배산역 가능 방향으로 약 100m 지점에서
-                우회전, 약 200m 직진
-                <br />
-                버스 : 신리삼거리 정류장에서 미곡천로를 따라 약 200m 도보로 이동
-              </ComeMethodContent>
-            </ComeMethodCol>
+            <BzIntroTitile>장애인 자세보조용구 보험급여 제도</BzIntroTitile>
+
+            <MainBzCol>
+              <MainBzContent>
+                <ContentP>
+                  “장애인 자세보조용구 보험급여 제도”란 장애인복지법에 따라
+                  등록된 장애인인 가입자 및 피부양자가 자세보조용구를 구입할
+                  경우, 구입금액 일부를 국민건강보험공단에서 보험급여비로
+                  지급하는 제도를 말합니다.
+                </ContentP>
+              </MainBzContent>
+              <MainBzContent>
+                <BzSmallTitle>1. 서비스 대상</BzSmallTitle>
+              </MainBzContent>
+              <MainBzContent>
+                <ContentP>
+                  장애의 정도가 심한 뇌병변장애 또는 지체장애로 스스로 앉기가
+                  어렵고, 기대지 않고는 독립적으로 앉은 자세를 유지하지 못하는
+                  사람으로서 아래의 기준을 충족하는 사람에 대하여 실시
+                </ContentP>
+              </MainBzContent>
+              <InsuraceTypeTableContainer>
+                <InsuraceTypeTable>
+                  <thead>
+                    <tr>
+                      <th width={100} rowSpan="2">
+                        장애유형
+                      </th>
+                      <th>세부인정기준</th>
+                    </tr>
+                    <tr>
+                      <th width={500}>
+                        해당검사 및 결과 (검사비용은 건강보험 적용)
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>
+                        뇌병변장애
+                        <br />
+                        심한 장애
+                      </th>
+                      <td rowSpan="2">
+                        <StandardContent>
+                          다음 각 호의 어느 하나의 요건을 충족하는 사람
+                          <br />
+                          1. 큰 동작 기능분류 체계(GMFCS) : 4~5등급
+                          <br />
+                          - 신경학적 검사(일반)
+                          <br />
+                          - 검사 분류번호 [나 610가]
+                          <br />
+                          - 앉은 자세의 일반적인 사진 촬영(휴대폰 카메라 수준)
+                          <br />
+                          <br />
+                          2. 도수근력 검사 : 하지 0-2등급
+                          <br />
+                          - 도수근력 평가(전신 MMT)
+                          <br />
+                          - 검사 분류번호 [나 661나]
+                          <br />
+                          - 양하지 중 낮은 등급 적용
+                          <br />- 목 근력 검사 포함
+                          <br />
+                          <br />
+                          3. 영상의학적 검사 : 하나 이상
+                          <br />① 코브(Cobb’s) 각도 : 20도 이상(척추측만 검사)
+                          <br />
+                          ② 척추전후만 각도 : 50도 이상(척추전만 또는 후만 검사)
+                          ③ 엉덩이관절이동지수(Hip Migration Index) : 30%
+                          이상(고관절 탈구 검사)
+                          <br />
+                          - 척추 방사선 검사
+                          <br />
+                          - 검사분류번호 [다149가] [다151나]
+                          <br />
+                          - Whole spine AP, lateral
+                          <br />
+                          (우선 supine에서, 필요 시 sitting에게 다시)
+                          <br />- 필요 시 hip AP & lateral, C-spine AP & lateral
+                          추가
+                        </StandardContent>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        지체장애
+                        <br />
+                        심한 장애
+                      </th>
+                    </tr>
+                  </tbody>
+                </InsuraceTypeTable>
+              </InsuraceTypeTableContainer>
+              <MainBzContent>
+                <BzSmallTitle>2. 보험급여 품목 및 기준액 내구현한</BzSmallTitle>
+              </MainBzContent>
+              <MainBzContent>
+                <ContentP>
+                  - 지급기준은 구성품별로 기준액이 별도 적용 구입 당시 기준액,
+                  고시금액, 실구입금액 중 최저금액의
+                  <span style={{ color: "red" }}>
+                    90%금액을 지원 (소득 수준에 따라 90~100% 까지 지원가능)
+                  </span>
+                </ContentP>
+              </MainBzContent>
+
+              <PriceTableContainer>
+                <PriceTable>
+                  <thead>
+                    <tr>
+                      <th>
+                        <PriceTableText>구분</PriceTableText>
+                      </th>
+                      <th>
+                        <PriceTableText>기준액(원)</PriceTableText>
+                      </th>
+                      <th>
+                        <PriceTableText>이지라이프 고시액(원)</PriceTableText>
+                      </th>
+                      <th>
+                        <PriceTableText>내구연한</PriceTableText>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>
+                        <PriceTableText>목통 및 골반지지대</PriceTableText>
+                      </th>
+                      <td>
+                        <PriceTableText>880,000</PriceTableText>
+                      </td>
+                      <td>
+                        <PriceTableText>883,000</PriceTableText>
+                      </td>
+                      <td rowSpan="4" style={{ textAlign: "center" }}>
+                        3년
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <PriceTableText>머리 및 목지지대</PriceTableText>
+                      </th>
+                      <td>
+                        <PriceTableText>210,000</PriceTableText>
+                      </td>
+                      <td>
+                        <PriceTableText>233,000</PriceTableText>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <PriceTableText>팔지지대 및 랩트레이</PriceTableText>
+                      </th>
+                      <td>
+                        <PriceTableText>170,000</PriceTableText>
+                      </td>
+                      <td>
+                        <PriceTableText>240,000</PriceTableText>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <PriceTableText>다리 및 발지지대</PriceTableText>
+                      </th>
+                      <td>
+                        <PriceTableText>240,000</PriceTableText>
+                      </td>
+                      <td>
+                        <PriceTableText>243,000</PriceTableText>
+                      </td>
+                    </tr>
+                  </tbody>
+                </PriceTable>
+              </PriceTableContainer>
+
+              <MainBzContent>
+                <BzSmallTitle>3. 자세보조용구 급여절차</BzSmallTitle>
+              </MainBzContent>
+
+              <ServiceStepContainer>
+                <ServiceStepContainTable>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ServiceStepTable>
+                          <thead>
+                            <tr>
+                              <td>진료</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>수급자</td>
+                            </tr>
+                            <tr>
+                              <td>적합여부 검사</td>
+                            </tr>
+                          </tbody>
+                        </ServiceStepTable>
+                      </td>
+                      <td>
+                        <FaArrowCircleRight color={"#5b7dbe"} />
+                      </td>
+                      <td>
+                        <ServiceStepTable>
+                          <thead>
+                            <tr>
+                              <td>처방</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>의사</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                적합시 보장구
+                                <br />
+                                처방전 발행
+                              </td>
+                            </tr>
+                          </tbody>
+                        </ServiceStepTable>
+                      </td>
+                      <td>
+                        <FaArrowCircleRight color={"#5b7dbe"} />
+                      </td>
+                      <td>
+                        <ServiceStepTable>
+                          <thead>
+                            <tr>
+                              <td>급여결정 신청</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>수급자</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                보장구처방전
+                                <br />
+                                첨부하여 신청
+                              </td>
+                            </tr>
+                          </tbody>
+                        </ServiceStepTable>
+                      </td>
+                      <td>
+                        <FaArrowCircleRight color={"#5b7dbe"} />
+                      </td>
+                      <td>
+                        <ServiceStepTable>
+                          <thead>
+                            <tr>
+                              <td>급여결정 통보</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>공단</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                적합시 급여
+                                <br />
+                                승인 통보
+                              </td>
+                            </tr>
+                          </tbody>
+                        </ServiceStepTable>
+                      </td>
+                    </tr>
+                  </tbody>
+                </ServiceStepContainTable>
+                <div style={{ marginTop: "1rem", marginBottom: "1rem" }} />
+
+                <ServiceStepContainTable>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <FaArrowCircleRight color={"#5b7dbe"} />
+                      </td>
+                      <td>
+                        <ServiceStepTable>
+                          <thead>
+                            <tr>
+                              <td>구입</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>수급자</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                등록된 업소
+                                <br />
+                                등록품목
+                              </td>
+                            </tr>
+                          </tbody>
+                        </ServiceStepTable>
+                      </td>
+                      <td>
+                        <FaArrowCircleRight color={"#5b7dbe"} />
+                      </td>
+                      <td>
+                        <ServiceStepTable>
+                          <thead>
+                            <tr>
+                              <td>검수 확인</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>업체 → 의사</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                처방내용 등
+                                <br />
+                                적합여부판정
+                              </td>
+                            </tr>
+                          </tbody>
+                        </ServiceStepTable>
+                      </td>
+                      <td>
+                        <FaArrowCircleRight color={"#5b7dbe"} />
+                      </td>
+                      <td>
+                        <ServiceStepTable>
+                          <thead>
+                            <tr>
+                              <td>급여비 청구</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>수급자</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                세금계산서 첨부하여
+                                <br />
+                                공단or주민센터 청구
+                              </td>
+                            </tr>
+                          </tbody>
+                        </ServiceStepTable>
+                      </td>
+                      <td>
+                        <FaArrowCircleRight color={"#5b7dbe"} />
+                      </td>
+                      <td>
+                        <ServiceStepTable>
+                          <thead>
+                            <tr>
+                              <td>급여비 지급</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>공단</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                지금기준에 <br />
+                                맞게 지급
+                              </td>
+                            </tr>
+                          </tbody>
+                        </ServiceStepTable>
+                      </td>
+                    </tr>
+                  </tbody>
+                </ServiceStepContainTable>
+              </ServiceStepContainer>
+            </MainBzCol>
           </>
         )}
       </RightContentContainer>
