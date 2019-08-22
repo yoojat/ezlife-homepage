@@ -68,7 +68,7 @@ export default () => (
             </Link>
           </MenuItem>
           <MenuItem>
-            <Link href={"/"}>
+            <Link href={"/products"}>
               <a>
                 <GnbD1Extended>제품소개</GnbD1Extended>
               </a>
@@ -84,21 +84,7 @@ export default () => (
           <MenuItem>
             <Link href={"/"}>
               <a>
-                <GnbD1>고객센터</GnbD1>
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem>
-            <Link href={"/"}>
-              <a>
                 <GnbD1>사이트맵</GnbD1>
-              </a>
-            </Link>
-          </MenuItem>
-          <MenuItem>
-            <Link href={"/"}>
-              <a>
-                <GnbD1>오시는 길</GnbD1>
               </a>
             </Link>
           </MenuItem>
