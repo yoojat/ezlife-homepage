@@ -4,6 +4,9 @@ import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle
 } from "react-icons/io";
+import CategoryButton from "../../components/CategoryButton";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const CategorySection = styled.section`
   padding-top: 7rem;
@@ -26,23 +29,6 @@ const CategoryItemContainer = styled.div`
   @media (max-width: 420px) {
     padding-top: inherit;
     padding-bottom: inherit;
-  }
-`;
-const CategoryItem = styled.div`
-  display: inline-block;
-  background-color: ${props => props.theme.whiteGray};
-  width: 200px;
-  margin: 0.1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  cursor: pointer;
-  &:hover {
-    background-color: ${props => props.theme.lightBlack};
-    color: white;
-  }
-  @media (max-width: 420px) {
-    width: 32%;
-    font-size: 11px;
   }
 `;
 
@@ -69,6 +55,7 @@ const SubCategoryItem = styled.div`
   margin-left: 0.3rem;
   margin-right: 0.3rem;
   cursor: pointer;
+  color: ${props => (props.selected ? props.theme.skyBlue : "inherit")};
   &:hover {
     color: ${props => props.theme.skyBlue};
   }
@@ -130,34 +117,67 @@ const ProductPageArrow = styled(ProductPageItem)`
   transform: translateY(10%);
 `;
 
-export default ({}) => (
+export default ({
+  categories,
+  setCategory,
+  selCategoryId,
+  subCategories,
+  setSubCategory,
+  selSubCategoryId,
+  products
+}) => (
   <>
+    <Header />
     <Head>
       <title>이지라이프 - 이지라이프는 세상을 편리하게 만듭니다</title>
     </Head>
     <CategorySection>
       <CategroyContainer>
         <CategoryItemContainer>
-          <CategoryItem>자세유지제품</CategoryItem>
-          <CategoryItem>보행, 이동보조제품</CategoryItem>
-          <CategoryItem>페달로</CategoryItem>
-          <CategoryItem>재활훈련제품</CategoryItem>
-          <CategoryItem>욕실, 배변 보조 제품</CategoryItem>
-          <CategoryItem>보조공학제품</CategoryItem>
+          {categories &&
+            categories.map((category, index) => (
+              <CategoryButton
+                key={category.id}
+                id={category.id}
+                name={category.name}
+                onClickFn={() => setCategory(category.id)}
+                selected={
+                  selCategoryId ? category.id === selCategoryId : index === 0
+                }
+              />
+            ))}
         </CategoryItemContainer>
       </CategroyContainer>
     </CategorySection>
     <SubCategorySection>
       <SubCategoryContainer>
-        <SubCategoryItem>좌석</SubCategoryItem>
-        <SubCategoryItem>기립보조기구</SubCategoryItem>
-        <SubCategoryItem>카시트</SubCategoryItem>
-        <SubCategoryItem>휠 베이스 보조기구</SubCategoryItem>
+        {subCategories &&
+          subCategories.map(subcategory => (
+            <SubCategoryItem
+              key={subcategory.id}
+              onClick={() => setSubCategory(subcategory.id)}
+              selected={selSubCategoryId === subcategory.id}
+            >
+              {subcategory.name}
+            </SubCategoryItem>
+          ))}
       </SubCategoryContainer>
     </SubCategorySection>
     <ProductSection>
       <ProductContainer>
-        <ProductItem>
+        {products &&
+          products.length > 0 &&
+          products.map(product => (
+            <ProductItem key={product.id}>
+              <ProductImgContainer>
+                <ProductImg src={"/static/img/brand/logo-icon.png"} />
+              </ProductImgContainer>
+              <ProductTitleContainer>
+                <ProductTitle>{product.name}</ProductTitle>
+              </ProductTitleContainer>
+            </ProductItem>
+          ))}
+        {/* <ProductItem>
           <ProductImgContainer>
             <ProductImg src={"/static/img/brand/logo-icon.png"} />
           </ProductImgContainer>
@@ -220,7 +240,7 @@ export default ({}) => (
           <ProductTitleContainer>
             <ProductTitle>아이용, 스페셜 시트</ProductTitle>
           </ProductTitleContainer>
-        </ProductItem>
+        </ProductItem> */}
       </ProductContainer>
     </ProductSection>
     <ProductPageSection>
@@ -238,5 +258,6 @@ export default ({}) => (
         </ProductPageArrow>
       </ProductPageContainer>
     </ProductPageSection>
+    <Footer />
   </>
 );
