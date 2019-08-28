@@ -13,20 +13,14 @@ class HeaderContainer extends React.Component {
           <a id="home" className="menu-item" href="/companyInfo">
             회사소개
           </a>
-          <a id="about" className="menu-item" href="/about">
+          <a id="about" className="menu-item" href="/products">
             제품소개
           </a>
-          <a id="contact" className="menu-item" href="/contact">
+          <a id="contact" className="menu-item" href="/goSupport">
             정부지원제도
           </a>
-          <a id="contact" className="menu-item" href="/contact">
-            고객센터
-          </a>
-          <a onClick={this.showSettings} className="menu-item--small" href="">
+          <a onClick={this.showSettings} className="menu-item--small" href="/">
             사이트맵
-          </a>
-          <a onClick={this.showSettings} className="menu-item--small" href="">
-            오시는 길
           </a>
         </ExtendedMenu>
         <HeaderPresenter />

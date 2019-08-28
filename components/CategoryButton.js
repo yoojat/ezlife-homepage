@@ -16,8 +16,8 @@ const CategoryItem = styled.a`
     color: white;
   }
   @media (max-width: 420px) {
-    width: 32%;
     font-size: 11px;
+    width: 80px;
   }
 `;
 
