@@ -2,6 +2,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import ReactMarkdown from "react-markdown";
 
 const MainInfoSection = styled.section`
   padding-top: 7rem;
@@ -69,7 +70,12 @@ const ProductInfoImg = styled.img`
   margin-bottom: 3rem;
 `;
 const ProductInfoContentContainer = styled.div``;
-const ProductInfoContent = styled.div``;
+const ProductInfoContent = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 800px;
+`;
 
 export default ({ product }) => (
   <>
@@ -118,7 +124,9 @@ export default ({ product }) => (
             ))}
           </ProductInfoImgContainer>
           <ProductInfoContentContainer>
-            <ProductInfoContent>{product.infoText}</ProductInfoContent>
+            <ProductInfoContent>
+              <ReactMarkdown source={product.infoText} />
+            </ProductInfoContent>
           </ProductInfoContentContainer>
         </ProductInfoSection>
       </>
