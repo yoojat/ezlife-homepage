@@ -18,6 +18,9 @@ export const PRODUCTS_QUERY = gql`
     products(where: { subCategory: { id: $subCategoryId } }) {
       id
       name
+      snapshot {
+        url
+      }
     }
   }
 `;

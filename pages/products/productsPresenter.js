@@ -7,6 +7,7 @@ import {
 import CategoryButton from "../../components/CategoryButton";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Link from "next/link";
 
 const CategorySection = styled.section`
   padding-top: 7rem;
@@ -168,79 +169,19 @@ export default ({
         {products &&
           products.length > 0 &&
           products.map(product => (
-            <ProductItem key={product.id}>
-              <ProductImgContainer>
-                <ProductImg src={"/static/img/brand/logo-icon.png"} />
-              </ProductImgContainer>
-              <ProductTitleContainer>
-                <ProductTitle>{product.name}</ProductTitle>
-              </ProductTitleContainer>
-            </ProductItem>
+            <Link href={`/product?id=${product.id}`} key={product.id}>
+              <a>
+                <ProductItem>
+                  <ProductImgContainer>
+                    <ProductImg src={product.snapshot.url} />
+                  </ProductImgContainer>
+                  <ProductTitleContainer>
+                    <ProductTitle>{product.name}</ProductTitle>
+                  </ProductTitleContainer>
+                </ProductItem>
+              </a>
+            </Link>
           ))}
-        {/* <ProductItem>
-          <ProductImgContainer>
-            <ProductImg src={"/static/img/brand/logo-icon.png"} />
-          </ProductImgContainer>
-          <ProductTitleContainer>
-            <ProductTitle>아이용, 스페셜 시트</ProductTitle>
-          </ProductTitleContainer>
-        </ProductItem>
-        <ProductItem>
-          <ProductImgContainer>
-            <ProductImg src={"/static/img/brand/logo-icon.png"} />
-          </ProductImgContainer>
-          <ProductTitleContainer>
-            <ProductTitle>아이용, 스페셜 시트</ProductTitle>
-          </ProductTitleContainer>
-        </ProductItem>
-        <ProductItem>
-          <ProductImgContainer>
-            <ProductImg src={"/static/img/brand/logo-icon.png"} />
-          </ProductImgContainer>
-          <ProductTitleContainer>
-            <ProductTitle>아이용, 스페셜 시트</ProductTitle>
-          </ProductTitleContainer>
-        </ProductItem>
-        <ProductItem>
-          <ProductImgContainer>
-            <ProductImg src={"/static/img/brand/logo-icon.png"} />
-          </ProductImgContainer>
-          <ProductTitleContainer>
-            <ProductTitle>아이용, 스페셜 시트</ProductTitle>
-          </ProductTitleContainer>
-        </ProductItem>
-        <ProductItem>
-          <ProductImgContainer>
-            <ProductImg src={"/static/img/brand/logo-icon.png"} />
-          </ProductImgContainer>
-          <ProductTitleContainer>
-            <ProductTitle>아이용, 스페셜 시트</ProductTitle>
-          </ProductTitleContainer>
-        </ProductItem>
-        <ProductItem>
-          <ProductImgContainer>
-            <ProductImg src={"/static/img/brand/logo-icon.png"} />
-          </ProductImgContainer>
-          <ProductTitleContainer>
-            <ProductTitle>아이용, 스페셜 시트</ProductTitle>
-          </ProductTitleContainer>
-        </ProductItem>
-        <ProductItem>
-          <ProductImgContainer>
-            <ProductImg src={"/static/img/brand/logo-icon.png"} />
-          </ProductImgContainer>
-          <ProductTitleContainer>
-            <ProductTitle>아이용, 스페셜 시트</ProductTitle>
-          </ProductTitleContainer>
-        </ProductItem>
-        <ProductItem>
-          <ProductImgContainer>
-            <ProductImg src={"/static/img/brand/logo-icon.png"} />
-          </ProductImgContainer>
-          <ProductTitleContainer>
-            <ProductTitle>아이용, 스페셜 시트</ProductTitle>
-          </ProductTitleContainer>
-        </ProductItem> */}
       </ProductContainer>
     </ProductSection>
     <ProductPageSection>

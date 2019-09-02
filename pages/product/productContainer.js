@@ -1,15 +1,34 @@
 import ProductPresenter from "./productPresenter";
-import withLayout from "../../components/withLayout";
+import { withRouter } from "next/dist/client/router";
+import { Query } from "react-apollo";
+import { PRODUCT_QUERY } from "../../queries/productQueries";
 
 class ProductContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  static async getInitialProps(props) {
+    const {
+      query: { id }
+    } = props;
+
+    return {
+      id
+    };
   }
 
   render() {
-    return <ProductPresenter />;
+    const { id } = this.props;
+    return (
+      <Query
+        query={PRODUCT_QUERY}
+        variables={{
+          id
+        }}
+      >
+        {({ data: { product } }) => {
+          return <ProductPresenter product={product} />;
+        }}
+      </Query>
+    );
   }
 }
 
-export default withLayout(ProductContainer);
+export default withRouter(ProductContainer);

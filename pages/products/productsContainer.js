@@ -2,7 +2,7 @@ import ProductsPresenter from "./productsPresenter";
 import { Query } from "react-apollo";
 
 import { withRouter } from "next/router";
-import { CATEGORYS_QUERY, PRODUCTS_QUERY } from "./productsQueries";
+import { CATEGORYS_QUERY, PRODUCTS_QUERY } from "../../queries/productsQueries";
 
 class ProductsContainer extends React.Component {
   static async getInitialProps(props) {
@@ -74,7 +74,8 @@ class ProductsContainer extends React.Component {
 
   setCategory = selCategoryId => {
     this.setState({
-      selCategoryId
+      selCategoryId,
+      selSubCategoryId: ""
     });
   };
 
