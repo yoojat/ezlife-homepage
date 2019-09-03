@@ -15,14 +15,16 @@ const LogoItem = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 15vw;
-  max-width: 10rem;
+  width: 22.5vw;
+  max-width: 15rem;
   min-width: 7rem;
   margin-left: 1.3rem;
   margin-top: 1.3rem;
 `;
 const Nav = styled.nav`
+  font-size: 1.1rem;
   float: right;
+  font-weight: bolder;
   display: table;
   height: 100px;
   margin-right: 1rem;

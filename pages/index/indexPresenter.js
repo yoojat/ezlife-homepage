@@ -57,7 +57,7 @@ const CustomerInfoContainer = styled.div`
   @media (min-width: 680px) {
     width: 38%;
     padding: 1%;
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
   display: inline-block;
 `;
@@ -68,7 +68,7 @@ const CustomerTitle = styled.div`
 `;
 const CustomerSubTitle = styled.div`
   color: ${props => props.theme.lightGray};
-  margin-bottom: 0.2rem;
+  margin-bottom: 1rem;
 `;
 const PhoneTitle = styled.div`
   font-size: 1.5rem;
@@ -76,15 +76,15 @@ const PhoneTitle = styled.div`
 `;
 const PhoneSubTitle = styled.div`
   color: ${props => props.theme.lightGray};
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 `;
 const BankTitle = styled.div`
   font-size: 1.5rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 `;
 const BankNum = styled.div`
   font-size: 1.3rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 1rem;
 `;
 const BankOwner = styled.div`
   font-size: 1.2rem;

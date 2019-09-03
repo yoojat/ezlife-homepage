@@ -27,6 +27,8 @@ const CategoryItemContainer = styled.div`
   max-width: 700px;
   min-width: 300px;
   text-align: center;
+  font-size: 1.1rem;
+  font-weight: bolder;
   @media (max-width: 420px) {
     padding-top: inherit;
     padding-bottom: inherit;
@@ -53,8 +55,8 @@ const SubCategoryContainer = styled.div`
 `;
 const SubCategoryItem = styled.div`
   display: inline-block;
-  margin-left: 0.3rem;
-  margin-right: 0.3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   cursor: pointer;
   color: ${props => (props.selected ? props.theme.skyBlue : "inherit")};
   &:hover {

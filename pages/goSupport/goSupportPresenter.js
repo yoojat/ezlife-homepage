@@ -214,7 +214,7 @@ const PriceTableContainer = styled.div`
 const PriceTable = styled.table`
   width: 100%;
   min-width: 700px;
-  text-align: right;
+  text-align: center;
   thead {
     background-color: ${props => props.theme.tableHeadBlue};
     color: white;
@@ -396,7 +396,7 @@ export default ({ nowPage, onPageClick }) => (
               getNumber={nowPage}
               onClick={() => onPageClick(VOUCHER)}
             >
-              장애인 보조기기 렌탈서비스(바우처)
+              장애인 보조기기 렌탈서비스
             </MenuItem>
             <MenuItem
               fixNumber={EXTENDED_PRODUCT}
