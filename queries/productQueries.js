@@ -13,11 +13,12 @@ export const PRODUCT_QUERY = gql`
       nameEn
       madeIn
       modelName
-      infoImg {
+      infoImg(orderBy: fileName_ASC) {
         id
         url
       }
       infoText
+      infomation
     }
   }
 `;

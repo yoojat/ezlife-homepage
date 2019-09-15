@@ -15,9 +15,13 @@ export const CATEGORYS_QUERY = gql`
 
 export const PRODUCTS_QUERY = gql`
   query productsQuery($subCategoryId: ID!) {
-    products(where: { subCategory: { id: $subCategoryId } }) {
+    products(
+      where: { subCategory: { id: $subCategoryId } }
+      orderBy: order_ASC
+    ) {
       id
       name
+      order
       snapshot {
         url
       }

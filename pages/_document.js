@@ -27,39 +27,33 @@ export default class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <meta
             name="description"
-            content="합리적인 가격으로 학습 공간을 이용할 수 있는 공유독서실 블루닷라운지 입니다"
+            content="삶을 보다 편리하게 만드는 이지라이프입니다"
           />
           <meta
             name="keyword"
-            content="독서실, 스터디, 학습, 학습공간, 24시, 24시독서실, 24시 독서실, 공유독서실"
+            content="레포차일드,장애아동의자,자세유지의자,장애아동용의자,특수의자,유모차형휠체어,휠체어,특수유모차,유모차,틸트,틸팅,가벼움"
           />
           <meta name="author" content="yoojat" />
-          <meta name="Distribution" content="creplay" />
-          <meta name="Copyright" content="creplay" />
+          <meta name="Distribution" content="ezlife" />
+          <meta name="Copyright" content="ezlife" />
           <meta name="robots" content="idnex,follow" />
-
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="블루닷라운지" />
-          <meta property="og:url" content="https://bluedotlounge.co.kr/" />
-
+          <meta property="og:title" content="이지라이프" />
+          <meta property="og:url" content="https://ezl.co.kr/" />
           <meta
             property="og:image"
-            content="https://bluedotlounge.co.kr/LogoBlue.png"
+            content="https://ezl.co.kr/img/brand/logoWithText.png"
           />
-          <meta property="og:description" content="블루닷라운지" />
-          <meta
+          <meta property="og:description" content="이지라이프" />
+          {/* <meta
             name="naver-site-verification"
             content="ef6fc6dcee12c206f322b582b00736e958b4b880"
-          />
+          /> */}
           <meta name="robots" content="index,follow" />
-
           <link href="/static/menuStyles.css" rel={"stylesheet"} />
-
           <link href="/static/styles.css" rel={"stylesheet"} />
-
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
-
           <link
             rel="apple-touch-icon"
             sizes="57x57"

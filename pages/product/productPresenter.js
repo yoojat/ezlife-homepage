@@ -2,7 +2,6 @@ import Head from "next/head";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import ReactMarkdown from "react-markdown";
 
 const MainInfoSection = styled.section`
   padding-top: 7rem;
@@ -125,7 +124,14 @@ export default ({ product }) => (
           </ProductInfoImgContainer>
           <ProductInfoContentContainer>
             <ProductInfoContent>
-              <ReactMarkdown source={product.infoText} />
+              {product.infomation.split("\n").map(line => {
+                return (
+                  <span>
+                    {line}
+                    <br />
+                  </span>
+                );
+              })}
             </ProductInfoContent>
           </ProductInfoContentContainer>
         </ProductInfoSection>

@@ -186,7 +186,7 @@ export default ({
           ))}
       </ProductContainer>
     </ProductSection>
-    <ProductPageSection>
+    {/* <ProductPageSection>
       <ProductPageContainer>
         <ProductPageArrow>
           <IoIosArrowDropleftCircle />
@@ -200,7 +200,7 @@ export default ({
           <IoIosArrowDroprightCircle />
         </ProductPageArrow>
       </ProductPageContainer>
-    </ProductPageSection>
+    </ProductPageSection> */}
     <Footer />
   </>
 );
