@@ -83,13 +83,13 @@ export default () => (
               </a>
             </Link>
           </MenuItem>
-          <MenuItem>
+          {/* <MenuItem>
             <Link href={"/"}>
               <a>
                 <GnbD1>사이트맵</GnbD1>
               </a>
             </Link>
-          </MenuItem>
+          </MenuItem> */}
         </Gnb>
       </Nav>
     </HeaderIn>

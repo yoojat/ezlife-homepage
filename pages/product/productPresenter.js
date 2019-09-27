@@ -118,20 +118,24 @@ export default ({ product }) => (
         <ProductInfoSection>
           <ProductInfoTitle>PRODUCT INFO</ProductInfoTitle>
           <ProductInfoImgContainer>
-            {product.infoImg.map(img => (
-              <ProductInfoImg src={img.url} key={img.id} />
-            ))}
+            {product &&
+              product.infoImg &&
+              product.infoImg.map(img => (
+                <ProductInfoImg src={img.url} key={img.id} />
+              ))}
           </ProductInfoImgContainer>
           <ProductInfoContentContainer>
             <ProductInfoContent>
-              {product.infomation.split("\n").map(line => {
-                return (
-                  <span>
-                    {line}
-                    <br />
-                  </span>
-                );
-              })}
+              {product &&
+                product.infomation &&
+                product.infomation.split("\n").map(line => {
+                  return (
+                    <span>
+                      {line}
+                      <br />
+                    </span>
+                  );
+                })}
             </ProductInfoContent>
           </ProductInfoContentContainer>
         </ProductInfoSection>
