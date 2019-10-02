@@ -2,11 +2,15 @@ import Head from "next/head";
 import styled from "styled-components";
 import Slider from "react-slick";
 import { FiPhone } from "react-icons/fi";
+import Link from "next/link";
 
 const Main = styled.main`
   clear: both;
 `;
-const ImgContainer = styled.div``;
+const ImgContainer = styled.div`
+  max-width: 250px;
+  cursor: pointer;
+`;
 
 const Img = styled.img`
   width: 100%;
@@ -47,7 +51,13 @@ const BestSellerTitle = styled.div`
   margin-bottom: 1rem;
 `;
 const BestSellerContent = styled.div`
+  margin-top: 60px;
   width: 100%;
+`;
+
+const BestSellProductTitle = styled.div`
+  margin-top: 20px;
+  font-size: 14px;
 `;
 const InfoContainer = styled.div`
   text-align: center;
@@ -104,7 +114,7 @@ var settings = {
   arrows: false
 };
 
-export default ({}) => (
+export default ({ bestProducts }) => (
   <Main>
     <Head>
       <title>이지라이프 - 이지라이프는 세상을 편리하게 만듭니다</title>
@@ -116,12 +126,34 @@ export default ({}) => (
           <BestSellerTitle>베스트셀러</BestSellerTitle>
           <BestSellerContent>
             <Slider {...settings}>
-              <ImgContainer>
-                <Img src={"/static/img/slideImgs/3.png"} />
+              {bestProducts.map(product => (
+                <ImgContainer key={product.id}>
+                  <Link href={`/product?id=${product.product.id}`}>
+                    <a>
+                      <Img src={product.product.snapshot.url} />
+                      <BestSellProductTitle>
+                        {product.product.name}
+                      </BestSellProductTitle>
+                    </a>
+                  </Link>
+                </ImgContainer>
+              ))}
+              {/* <ImgContainer>
+                <Img src={"/static/img/slideImgs/2019-05-01 12;57;05.JPG"} />
+                <BestSellProductTitle>레포차일드</BestSellProductTitle>
               </ImgContainer>
               <ImgContainer>
-                <Img src={"/static/img/slideImgs/3.png"} />
+                <Img src={"/static/img/slideImgs/미그논.BMP"} />
+                <BestSellProductTitle>미그논</BestSellProductTitle>
               </ImgContainer>
+              <ImgContainer>
+                <Img src={"/static/img/slideImgs/스페셜 시트_이너.JPG"} />
+                <BestSellProductTitle>스페셜 시트 이너</BestSellProductTitle>
+              </ImgContainer>
+              <ImgContainer>
+                <Img src={"/static/img/slideImgs/프론 스텐더(수동).JPG"} />
+                <BestSellProductTitle>프론 스텐더(수동)</BestSellProductTitle>
+              </ImgContainer> */}
             </Slider>
           </BestSellerContent>
         </BestSeller>

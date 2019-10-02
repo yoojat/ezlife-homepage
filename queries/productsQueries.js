@@ -41,3 +41,18 @@ export const SEARCH_PRODCUTS_QUERY = gql`
     }
   }
 `;
+
+export const BEST_PRODUCTS_QUERY = gql`
+  {
+    bestProducts {
+      id
+      product {
+        id
+        name
+        snapshot {
+          url
+        }
+      }
+    }
+  }
+`;
