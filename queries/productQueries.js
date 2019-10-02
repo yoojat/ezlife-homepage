@@ -19,6 +19,14 @@ export const PRODUCT_QUERY = gql`
       }
       infoText
       infomation
+      subCategory {
+        id
+        name
+        category {
+          id
+          name
+        }
+      }
     }
   }
 `;

@@ -2,6 +2,62 @@ import Head from "next/head";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import CategoryButton from "../../components/CategoryButton";
+
+const CategorySection = styled.section`
+  padding-top: 7rem;
+`;
+const CategroyContainer = styled.div`
+  background-image: url("/static/img/etc/lavender-4348354_1920.jpg");
+  @media (max-width: 420px) {
+    background-image: inherit;
+  }
+  text-align: center;
+`;
+const CategoryItemContainer = styled.div`
+  display: inline-block;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 80%;
+  max-width: 700px;
+  min-width: 300px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  @media (max-width: 420px) {
+    padding-top: inherit;
+    padding-bottom: inherit;
+  }
+`;
+
+const SubCategorySection = styled.section`
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+`;
+const SubCategoryContainer = styled.div`
+  display: inline-block;
+  width: 90%;
+  min-width: 300px;
+  border: 1px solid ${props => props.theme.black};
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @media (max-width: 420px) {
+    border: inherit;
+    font-size: 11px;
+  }
+`;
+const SubCategoryItem = styled.div`
+  display: inline-block;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  color: ${props => (props.selected ? props.theme.skyBlue : "inherit")};
+  &:hover {
+    color: ${props => props.theme.skyBlue};
+  }
+`;
 
 const MainInfoSection = styled.section`
   padding-top: 7rem;
@@ -76,12 +132,49 @@ const ProductInfoContent = styled.div`
   max-width: 800px;
 `;
 
-export default ({ product }) => (
+export default ({
+  product,
+  subCategories,
+  categories,
+  onSubCategoryClick,
+  onCategoryClick
+}) => (
   <>
     <Head>
       <title>이지라이프 - 이지라이프는 세상을 편리하게 만듭니다</title>
     </Head>
     <Header />
+    <CategorySection>
+      <CategroyContainer>
+        <CategoryItemContainer>
+          {categories &&
+            categories.map((category, index) => (
+              <CategoryButton
+                key={category.id}
+                id={category.id}
+                name={category.name}
+                onClickFn={() => onCategoryClick(category.id)}
+                selected={product.subCategory.category.id === category.id}
+              />
+            ))}
+        </CategoryItemContainer>
+      </CategroyContainer>
+    </CategorySection>
+
+    <SubCategorySection>
+      <SubCategoryContainer>
+        {subCategories &&
+          subCategories.map(subcategory => (
+            <SubCategoryItem
+              key={subcategory.id}
+              onClick={() => onSubCategoryClick(subcategory.id)}
+              selected={product.subCategory.id === subcategory.id}
+            >
+              {subcategory.name}
+            </SubCategoryItem>
+          ))}
+      </SubCategoryContainer>
+    </SubCategorySection>
 
     {product && (
       <>

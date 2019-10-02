@@ -7,18 +7,21 @@ import { CATEGORYS_QUERY, PRODUCTS_QUERY } from "../../queries/productsQueries";
 class ProductsContainer extends React.Component {
   static async getInitialProps(props) {
     const {
-      query: { selSubCategoryId }
+      query: { selSubCategoryId, selCategoryId }
     } = props;
 
     return {
-      selSubCategoryId
+      selSubCategoryId,
+      selCategoryId
     };
   }
   constructor(props) {
     super(props);
+    const { selSubCategoryId, selCategoryId } = props;
+    console.log({ selCategoryId });
     this.state = {
-      selCategoryId: "",
-      selSubCategoryId: ""
+      selCategoryId: selCategoryId || "",
+      selSubCategoryId: selSubCategoryId || ""
     };
   }
 
