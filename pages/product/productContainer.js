@@ -58,7 +58,10 @@ class ProductContainer extends React.Component {
   };
 
   onCategoryClick = selCategoryId => {
-    Router.push({ pathname: "/products", query: { selCategoryId } });
+    Router.push({
+      pathname: "/products",
+      query: { selCategoryId, doGetAllProducts: true }
+    });
   };
 }
 

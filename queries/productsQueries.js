@@ -56,3 +56,19 @@ export const BEST_PRODUCTS_QUERY = gql`
     }
   }
 `;
+
+export const CATEGORY_PRODUCTS = gql`
+  query categoryProducts($categoryId: ID!) {
+    products(
+      where: { subCategory: { category: { id: $categoryId } } }
+      orderBy: order_ASC
+    ) {
+      id
+      name
+      order
+      snapshot {
+        url
+      }
+    }
+  }
+`;
