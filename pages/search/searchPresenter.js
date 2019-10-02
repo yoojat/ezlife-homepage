@@ -1,9 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
-import {
-  IoIosArrowDropleftCircle,
-  IoIosArrowDroprightCircle
-} from "react-icons/io";
+
 import CategoryButton from "../../components/CategoryButton";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -72,7 +69,7 @@ const ProductSection = styled.section`
 const ProductContainer = styled.div`
   display: inline-block;
   width: 90%;
-  max-width: 700px;
+  /* max-width: 700px; */
   @media (max-width: 720px) {
     max-width: 400px;
   }
@@ -120,21 +117,13 @@ const ProductPageArrow = styled(ProductPageItem)`
   transform: translateY(10%);
 `;
 
-export default ({
-  categories,
-  setCategory,
-  selCategoryId,
-  subCategories,
-  setSubCategory,
-  selSubCategoryId,
-  products
-}) => (
+export default ({ products }) => (
   <>
     <Header />
     <Head>
       <title>이지라이프 - 이지라이프는 세상을 편리하게 만듭니다</title>
     </Head>
-    <CategorySection>
+    {/* <CategorySection>
       <CategroyContainer>
         <CategoryItemContainer>
           {categories &&
@@ -151,8 +140,8 @@ export default ({
             ))}
         </CategoryItemContainer>
       </CategroyContainer>
-    </CategorySection>
-    <SubCategorySection>
+    </CategorySection> */}
+    {/* <SubCategorySection>
       <SubCategoryContainer>
         {subCategories &&
           subCategories.map(subcategory => (
@@ -165,7 +154,7 @@ export default ({
             </SubCategoryItem>
           ))}
       </SubCategoryContainer>
-    </SubCategorySection>
+    </SubCategorySection> */}
     <ProductSection>
       <ProductContainer>
         {products &&

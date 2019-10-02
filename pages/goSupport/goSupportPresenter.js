@@ -4,7 +4,7 @@ import Map from "../../components/Map";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 const TopBannerContainer = styled.div`
-  padding-top: 100px;
+  padding-top: 130px;
   width: 100vw;
 `;
 
@@ -12,6 +12,9 @@ const TopBanner = styled.div`
   background-image: url("/static/img/etc/computer-1149148_1920.jpg");
   height: 170px;
   width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
   background-size: cover;
 `;
 
@@ -29,8 +32,11 @@ const BannerSubTitle = styled.div`
 const TopBannerModal = styled.div`
   height: 110px;
   width: 100%;
+  max-width: 1280px;
   position: absolute;
-  top: 100px;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.5); /*살짝 투명한 검정으로 배경색*/
   padding-top: 60px;
 `;
@@ -39,6 +45,9 @@ const ContentSection = styled.div`
   text-align: left;
   margin-top: 3rem;
   display: table;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
   @media (max-width: 1280px) {
     margin-top: 1rem;
     margin-bottom: 1rem;

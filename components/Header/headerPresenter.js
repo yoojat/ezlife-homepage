@@ -28,15 +28,16 @@ const Nav = styled.nav`
   display: table;
   height: 100px;
   margin-right: 1rem;
-  @media (max-width: 600px) {
-    display: none;
-  }
+  position: relative;
 `;
 
 const Gnb = styled.ul`
   vertical-align: middle;
   height: 100px;
   display: table-cell;
+  @media (max-width: 670px) {
+    display: none;
+  }
 `;
 
 const MenuItem = styled.li`
@@ -49,7 +50,34 @@ const GnbD1 = styled.div``;
 
 const GnbD1Extended = styled(GnbD1)``;
 
-export default () => (
+const SearchContainer = styled.div`
+  height: 100px;
+  display: table-cell;
+  vertical-align: middle;
+  @media (max-width: 670px) {
+    position: relative;
+    right: 54px;
+  }
+`;
+
+const SearchTextInput = styled.input`
+  height: 21px;
+  border: 1px solid #dedede;
+  @media (max-width: 670px) {
+    width: 80px;
+  }
+`;
+
+const SearchBtn = styled.input`
+  border-radius: 3px;
+  width: 60px;
+  background-color: ${props => props.theme.deepBlue};
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+`;
+
+export default ({ onSubmit, onSearchTextChange, searchVal }) => (
   <Header>
     <HeaderIn>
       <LogoItem>
@@ -83,14 +111,17 @@ export default () => (
               </a>
             </Link>
           </MenuItem>
-          {/* <MenuItem>
-            <Link href={"/"}>
-              <a>
-                <GnbD1>사이트맵</GnbD1>
-              </a>
-            </Link>
-          </MenuItem> */}
         </Gnb>
+        <SearchContainer>
+          <form>
+            <SearchTextInput
+              type="text"
+              onChange={e => onSearchTextChange(e)}
+              value={searchVal}
+            />
+            <SearchBtn type="submit" value="검색" onClick={e => onSubmit(e)} />
+          </form>
+        </SearchContainer>
       </Nav>
     </HeaderIn>
   </Header>

@@ -2,11 +2,30 @@ import HeaderPresenter from "./headerPresenter";
 import { slide as Menu } from "react-burger-menu";
 import "./sideBarStyles.css";
 import styled from "styled-components";
+import Router from "next/router";
 
 const ExtendedMenu = styled(Menu)``;
 
 class HeaderContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchVal: ""
+    };
+  }
+
+  onSubmit = event => {
+    event.preventDefault();
+    const { searchVal } = this.state;
+    Router.push({ pathname: "/search", query: { searchVal } });
+  };
+
+  onSearchTextChange = event => {
+    this.setState({ searchVal: event.target.value });
+  };
+
   render() {
+    const { searchVal } = this.state;
     return (
       <>
         <ExtendedMenu right>
@@ -23,7 +42,11 @@ class HeaderContainer extends React.Component {
             사이트맵
           </a>
         </ExtendedMenu>
-        <HeaderPresenter />
+        <HeaderPresenter
+          onSubmit={this.onSubmit}
+          onSearchTextChange={this.onSearchTextChange}
+          searchVal={searchVal}
+        />
       </>
     );
   }

@@ -28,3 +28,16 @@ export const PRODUCTS_QUERY = gql`
     }
   }
 `;
+
+export const SEARCH_PRODCUTS_QUERY = gql`
+  query searchProductsQuery($text: String!) {
+    products(where: { name_contains: $text }) {
+      id
+      name
+      order
+      snapshot {
+        url
+      }
+    }
+  }
+`;
