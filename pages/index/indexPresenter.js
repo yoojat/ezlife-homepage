@@ -12,9 +12,14 @@ const Img = styled.img`
   width: 100%;
 `;
 const SlideSection = styled.section`
+  background-image: url("/static/img/etc/computer-1149148_1920.jpg");
+  width: 100%;
+  height: 170px;
   width: 100%;
   max-width: 1280px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
 `;
 
 const InfoSection = styled.section`
@@ -104,16 +109,7 @@ export default ({}) => (
     <Head>
       <title>이지라이프 - 이지라이프는 세상을 편리하게 만듭니다</title>
     </Head>
-    <SlideSection>
-      <Slider {...settings}>
-        <ImgContainer>
-          <Img src={"/static/img/slideImgs/1.jpg"} />
-        </ImgContainer>
-        <ImgContainer>
-          <Img src={"/static/img/slideImgs/2.jpg"} />
-        </ImgContainer>
-      </Slider>
-    </SlideSection>
+    <SlideSection></SlideSection>
     <InfoSection>
       <InfoContainer>
         <BestSeller>

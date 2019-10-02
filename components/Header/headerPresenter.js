@@ -16,7 +16,7 @@ const LogoItem = styled.div`
 
 const Logo = styled.img`
   width: 22.5vw;
-  max-width: 15rem;
+  max-width: 11rem;
   min-width: 7rem;
   margin-left: 1.3rem;
   margin-top: 1.3rem;
@@ -98,16 +98,16 @@ export default ({ onSubmit, onSearchTextChange, searchVal }) => (
             </Link>
           </MenuItem>
           <MenuItem>
-            <Link href={"/products"}>
+            <Link href={"/goSupport"}>
               <a>
-                <GnbD1Extended>제품소개</GnbD1Extended>
+                <GnbD1>정부지원제도</GnbD1>
               </a>
             </Link>
           </MenuItem>
           <MenuItem>
-            <Link href={"/goSupport"}>
+            <Link href={"/products"}>
               <a>
-                <GnbD1>정부지원제도</GnbD1>
+                <GnbD1Extended>제품소개</GnbD1Extended>
               </a>
             </Link>
           </MenuItem>
