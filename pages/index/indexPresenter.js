@@ -5,7 +5,9 @@ import { FiPhone } from "react-icons/fi";
 import Link from "next/link";
 
 const Main = styled.main`
-  clear: both;
+  /* clear: both; */
+  position: relative;
+  top: 130px;
 `;
 const ImgContainer = styled.div`
   max-width: 250px;

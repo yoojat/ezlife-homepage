@@ -2,7 +2,7 @@ import ProductPresenter from "./productPresenter";
 import Router, { withRouter } from "next/dist/client/router";
 import { Query } from "react-apollo";
 import { PRODUCT_QUERY } from "../../queries/productQueries";
-import { PRODUCTS_QUERY, CATEGORYS_QUERY } from "../../queries/productsQueries";
+import { CATEGORYS_QUERY } from "../../queries/productsQueries";
 
 class ProductContainer extends React.Component {
   static async getInitialProps(props) {

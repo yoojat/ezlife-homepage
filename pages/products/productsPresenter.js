@@ -116,10 +116,6 @@ const ProductPageItem = styled.div`
   line-height: 1rem;
 `;
 
-const ProductPageArrow = styled(ProductPageItem)`
-  transform: translateY(10%);
-`;
-
 export default ({
   categories,
   setCategory,
