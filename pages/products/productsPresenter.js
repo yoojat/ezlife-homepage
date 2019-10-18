@@ -12,7 +12,7 @@ const CategorySection = styled.section`
   margin-right: auto;
 `;
 const CategroyContainer = styled.div`
-  background-image: url("/static/img/etc/lavender-4348354_1920.jpg");
+  background-image: url("/static/img/etc/computer-1149148_1920.jpg");
   @media (max-width: 420px) {
     background-image: inherit;
   }
