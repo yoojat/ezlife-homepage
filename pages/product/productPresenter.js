@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -48,7 +49,7 @@ const SubCategoryContainer = styled.div`
     font-size: 11px;
   }
 `;
-const SubCategoryItem = styled.div`
+const SubCategoryItem = styled.a`
   display: inline-block;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -165,13 +166,15 @@ export default ({
       <SubCategoryContainer>
         {subCategories &&
           subCategories.map(subcategory => (
-            <SubCategoryItem
-              key={subcategory.id}
-              onClick={() => onSubCategoryClick(subcategory.id)}
-              selected={product.subCategory.id === subcategory.id}
-            >
-              {subcategory.name}
-            </SubCategoryItem>
+            <Link href={`/products?selSubCategoryId=${subcategory.id}`}>
+              <a
+                key={subcategory.id}
+                // onClick={() => onSubCategoryClick(subcategory.id)}
+                selected={product.subCategory.id === subcategory.id}
+              >
+                {subcategory.name}
+              </a>
+            </Link>
           ))}
       </SubCategoryContainer>
     </SubCategorySection>

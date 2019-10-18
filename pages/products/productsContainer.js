@@ -22,16 +22,15 @@ class ProductsContainer extends React.Component {
   }
   constructor(props) {
     super(props);
-    const { selSubCategoryId, selCategoryId, doGetAllProducts } = props;
+    const { doGetAllProducts } = props;
     this.state = {
-      selCategoryId: selCategoryId || "",
-      selSubCategoryId: selSubCategoryId || "",
       doGetAllProducts: doGetAllProducts || true
     };
   }
 
   render() {
-    const { selCategoryId, selSubCategoryId, doGetAllProducts } = this.state;
+    const { doGetAllProducts } = this.state;
+    const { selCategoryId, selSubCategoryId } = this.props;
     return (
       <Query query={CATEGORYS_QUERY}>
         {({ data: { categories } }) => {
@@ -42,11 +41,15 @@ class ProductsContainer extends React.Component {
                     .subCategory
                 : categories[0].subCategory)) ||
             [];
+
           return (
             <Query
               query={CATEGORY_PRODUCTS}
-              variables={{ categoryId: selCategoryId || categories[0].id }}
-              skip={!doGetAllProducts}
+              variables={{
+                categoryId: selCategoryId || (categories && categories[0].id)
+              }}
+              // skip={!doGetAllProducts || categories === undefined}
+              skip={selSubCategoryId || categories === undefined}
             >
               {({ data }) => {
                 const categoryProducts = (data && data.products) || [];
@@ -60,10 +63,7 @@ class ProductsContainer extends React.Component {
                         ? subCategories[0].id
                         : ""
                     }}
-                    skip={
-                      doGetAllProducts ||
-                      (!selSubCategoryId && subCategories.length === 0)
-                    }
+                    skip={!selSubCategoryId && subCategories.length === 0}
                   >
                     {({ data }) => {
                       const products =
@@ -96,21 +96,6 @@ class ProductsContainer extends React.Component {
       </Query>
     );
   }
-
-  setCategory = selCategoryId => {
-    this.setState({
-      selCategoryId,
-      selSubCategoryId: "",
-      doGetAllProducts: true
-    });
-  };
-
-  setSubCategory = selSubCategoryId => {
-    this.setState({
-      selSubCategoryId,
-      doGetAllProducts: false
-    });
-  };
 }
 
 export default withRouter(ProductsContainer);

@@ -1,10 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
-import {
-  IoIosArrowDropleftCircle,
-  IoIosArrowDroprightCircle
-} from "react-icons/io";
-import CategoryButton from "../../components/CategoryButton";
+import CategoryButton2 from "../../components/CategoryButton2";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Link from "next/link";
@@ -53,7 +49,7 @@ const SubCategoryContainer = styled.div`
     font-size: 11px;
   }
 `;
-const SubCategoryItem = styled.div`
+const SubCategoryItem = styled.a`
   display: inline-block;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -100,28 +96,11 @@ const ProductImg = styled.img`
 `;
 const ProductTitleContainer = styled.div``;
 const ProductTitle = styled.div``;
-const ProductPageSection = styled.section``;
-const ProductPageContainer = styled.div`
-  text-align: center;
-`;
-const ProductPageItem = styled.div`
-  font-size: 17px;
-  display: inline-block;
-  cursor: pointer;
-  &:hover {
-    color: ${props => props.theme.skyBlue};
-  }
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  line-height: 1rem;
-`;
 
 export default ({
   categories,
-  setCategory,
   selCategoryId,
   subCategories,
-  setSubCategory,
   selSubCategoryId,
   products
 }) => (
@@ -135,11 +114,10 @@ export default ({
         <CategoryItemContainer>
           {categories &&
             categories.map((category, index) => (
-              <CategoryButton
+              <CategoryButton2
                 key={category.id}
                 id={category.id}
                 name={category.name}
-                onClickFn={() => setCategory(category.id)}
                 selected={
                   selCategoryId ? category.id === selCategoryId : index === 0
                 }
@@ -152,13 +130,17 @@ export default ({
       <SubCategoryContainer>
         {subCategories &&
           subCategories.map(subcategory => (
-            <SubCategoryItem
+            <Link
+              href={`/products?selSubCategoryId=${subcategory.id}&selCategoryId=${subcategory.category.id}`}
               key={subcategory.id}
-              onClick={() => setSubCategory(subcategory.id)}
-              selected={selSubCategoryId === subcategory.id}
             >
-              {subcategory.name}
-            </SubCategoryItem>
+              <SubCategoryItem
+                key={subcategory.id}
+                selected={selSubCategoryId === subcategory.id}
+              >
+                {subcategory.name}
+              </SubCategoryItem>
+            </Link>
           ))}
       </SubCategoryContainer>
     </SubCategorySection>

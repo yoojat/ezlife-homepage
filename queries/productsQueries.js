@@ -8,6 +8,9 @@ export const CATEGORYS_QUERY = gql`
       subCategory {
         id
         name
+        category {
+          id
+        }
       }
     }
   }
