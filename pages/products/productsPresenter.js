@@ -7,6 +7,9 @@ import Link from "next/link";
 
 const CategorySection = styled.section`
   padding-top: 7rem;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const CategroyContainer = styled.div`
   background-image: url("/static/img/etc/lavender-4348354_1920.jpg");
@@ -35,6 +38,9 @@ const SubCategorySection = styled.section`
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const SubCategoryContainer = styled.div`
   display: inline-block;
@@ -47,6 +53,9 @@ const SubCategoryContainer = styled.div`
   @media (max-width: 420px) {
     border: inherit;
     font-size: 11px;
+  }
+  @media (min-width: 1280px) {
+    width: 100%;
   }
 `;
 const SubCategoryItem = styled.a`
