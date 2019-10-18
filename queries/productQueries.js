@@ -22,6 +22,7 @@ export const PRODUCT_QUERY = gql`
       subCategory {
         id
         name
+        order
         category {
           id
           name

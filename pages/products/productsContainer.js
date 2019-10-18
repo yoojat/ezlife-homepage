@@ -22,37 +22,34 @@ class ProductsContainer extends React.Component {
   }
   constructor(props) {
     super(props);
-    const { doGetAllProducts } = props;
-    this.state = {
-      doGetAllProducts: doGetAllProducts || true
-    };
   }
 
   render() {
-    const { doGetAllProducts } = this.state;
     const { selCategoryId, selSubCategoryId } = this.props;
     return (
       <Query query={CATEGORYS_QUERY}>
         {({ data: { categories } }) => {
-          const subCategories =
+          const subCategories = sortSubcategoriesByOrder(
             (categories &&
               (selCategoryId
                 ? categories.find(category => category.id === selCategoryId)
                     .subCategory
                 : categories[0].subCategory)) ||
-            [];
-
+              []
+          );
           return (
             <Query
               query={CATEGORY_PRODUCTS}
               variables={{
                 categoryId: selCategoryId || (categories && categories[0].id)
               }}
-              // skip={!doGetAllProducts || categories === undefined}
               skip={selSubCategoryId || categories === undefined}
             >
               {({ data }) => {
-                const categoryProducts = (data && data.products) || [];
+                const categoryProducts = sortProductsBySubCategory(
+                  (data && data.products) || []
+                );
+
                 return (
                   <Query
                     query={PRODUCTS_QUERY}
@@ -66,14 +63,26 @@ class ProductsContainer extends React.Component {
                     skip={!selSubCategoryId && subCategories.length === 0}
                   >
                     {({ data }) => {
-                      const products =
+                      const products = sortProductsBySubCategory(
                         categoryProducts.length > 0
                           ? categoryProducts
                           : data
                           ? data.products
                             ? data.products
                             : []
-                          : [];
+                          : []
+                      );
+
+                      // const sortedBySubCategoryProducts = products.sort(
+                      //   (a, b) => {
+                      //     if (a.subCategory.id >= b.subCategory.id) {
+                      //       return -1;
+                      //     } else {
+                      //       return 1;
+                      //     }
+                      //   }
+                      // );
+                      // console.log({ sortedBySubCategoryProducts });
 
                       return (
                         <ProductsPresenter
@@ -99,3 +108,31 @@ class ProductsContainer extends React.Component {
 }
 
 export default withRouter(ProductsContainer);
+
+const sortProductsBySubCategory = products => {
+  products.sort((a, b) => {
+    if (a.subCategory.order > b.subCategory.order) {
+      return 1;
+    } else if (a.subCategory.order < b.subCategory.order) {
+      return -1;
+    } else {
+      if (a.order >= b.order) {
+        return 1;
+      } else {
+        return -1;
+      }
+    }
+  });
+  return products;
+};
+
+const sortSubcategoriesByOrder = subCategories => {
+  subCategories.sort((a, b) => {
+    if (a.order >= b.order) {
+      return 1;
+    } else if (a.order < b.order) {
+      return -1;
+    }
+  });
+  return subCategories;
+};

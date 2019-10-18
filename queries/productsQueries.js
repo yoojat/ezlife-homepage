@@ -8,6 +8,7 @@ export const CATEGORYS_QUERY = gql`
       subCategory {
         id
         name
+        order
         category {
           id
         }
@@ -27,6 +28,10 @@ export const PRODUCTS_QUERY = gql`
       order
       snapshot {
         url
+      }
+      subCategory {
+        id
+        order
       }
     }
   }
@@ -71,6 +76,10 @@ export const CATEGORY_PRODUCTS = gql`
       order
       snapshot {
         url
+      }
+      subCategory {
+        id
+        order
       }
     }
   }
