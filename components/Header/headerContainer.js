@@ -28,7 +28,7 @@ class HeaderContainer extends React.Component {
     const { searchVal } = this.state;
     return (
       <>
-        <ExtendedMenu right>
+        <ExtendedMenu right width={140}>
           <a id="home" className="menu-item" href="/companyInfo">
             회사소개
           </a>

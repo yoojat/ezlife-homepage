@@ -4,6 +4,7 @@ const Footer = styled.footer`
   padding: 30px 0;
   text-align: center;
   font-size: 13px;
+  margin-top: 200px;
 `;
 
 const BranchInfoContainer = styled.div``;
