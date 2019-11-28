@@ -118,13 +118,16 @@ const ProductInfoSection = styled.section`
 `;
 const ProductInfoTitle = styled.div`
   font-size: 1.3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const ProductInfoImgContainer = styled.div`
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
