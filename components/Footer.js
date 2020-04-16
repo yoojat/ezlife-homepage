@@ -25,7 +25,7 @@ export default () => (
         주소 : 부산광역시 연제구 연수로 148번길 45(연산동 2층)
       </BranchInfoItem>
       <BranchInfoItem>
-        TEL : 051-867-4987 | FAX : 051-867-4988 | E-mail : juoh3325@hanmail.net
+        TEL : 051-867-4987 | FAX : 051-867-4988 | E-mail : juah3325@hanmail.net
       </BranchInfoItem>
       <BranchInfoItem>Copyright EZ life</BranchInfoItem>
     </BranchInfoContainer>
